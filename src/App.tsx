@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
 	//get random number
-	const passedQue = randomNumber(1, 100) > 8;
+	const passedQue = randomNumber(1, 100) < 15;
 	//if that numbe is in passed que range
 	if (!passedQue) {
 		quePageReload(8000);
@@ -12,13 +12,14 @@ function App() {
 	return (
 		<div className="App">
 			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.tsx</code> and save to reload.
-				</p>
-				<a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-					Learn React
-				</a>
+				<title>{passedQue ? 'Yeezy Que passed' : 'Still in Que'}</title>
+				{passedQue ? (
+					<a data-auto-id="yeezy-navigation-link-help-home" href="/">
+						Home
+					</a>
+				) : (
+					<h1>STILL IN QUE</h1>
+				)}
 			</header>
 		</div>
 	);
@@ -30,7 +31,7 @@ function randomNumber(min: number, max: number): number {
 
 function quePageReload(delay: number): void {
 	setTimeout(function() {
-		location.reload();
+		window.location.reload();
 	}, delay);
 }
 

@@ -1,3 +1,7 @@
+currently it is hard coded to reload page every 8 seconds until user passes que
+to pass que user must roll less than a 15 on page load
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
